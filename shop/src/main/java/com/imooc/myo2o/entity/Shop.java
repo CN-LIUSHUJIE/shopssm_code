@@ -24,7 +24,16 @@ public class Shop {
 	private List<ShopAuthMap> staffList;
 	private Area area;
 	private ShopCategory shopCategory;
-	private ShopCategory parentCategory;
+
+	public PersonInfo getOwner() {
+		return owner;
+	}
+
+	public void setOwner(PersonInfo owner) {
+		this.owner = owner;
+	}
+
+	private PersonInfo owner;
 
 	public Long getShopId() {
 		return shopId;
@@ -174,12 +183,6 @@ public class Shop {
 		return "[shopId=" + shopId + ", shopName=" + shopName + "]";
 	}
 
-	public ShopCategory getParentCategory() {
-		return parentCategory;
-	}
 
-	public void setParentCategory(ShopCategory parentCategory) {
-		this.parentCategory = parentCategory;
-	}
 
 }

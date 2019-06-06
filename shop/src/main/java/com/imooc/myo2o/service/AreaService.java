@@ -19,5 +19,6 @@ public interface AreaService {
 	List<Area> getAreaList() throws JsonParseException, JsonMappingException,
 			IOException;
 
+	AreaExecution addArea(Area area);
 
 }

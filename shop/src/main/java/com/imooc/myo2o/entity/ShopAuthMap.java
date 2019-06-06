@@ -103,7 +103,7 @@ public class ShopAuthMap {
 	public void setShop(Shop shop) {
 		this.shop = shop;
 	}
-
+	@Override
 	public String toString() {
 		return "[shopId=" + shopId + ", employeeId=" + employeeId
 				+ ", employeeName=" + name + "]";

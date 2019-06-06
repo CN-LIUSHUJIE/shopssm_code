@@ -34,4 +34,21 @@ public class AreaServiceImpl implements AreaService {
 
 		return areaList;
 	}
+
+	@Override
+	public AreaExecution addArea(Area area) {
+		if (area.getAreaName() != null && !"".equals(area.getAreaName())) {
+			area.setCreateTime(new Date());
+			area.setLastEditTime(new Date());
+
+			int effectedNum = areaDao.insertArea(area);
+			if (effectedNum > 0) {
+				return new AreaExecution(AreaStateEnum.SUCCESS, area);
+			} else {
+				return new AreaExecution(AreaStateEnum.INNER_ERROR, area);
+			}
+		} else {
+			return new AreaExecution(AreaStateEnum.EMPTY);
+		}
+	}
 }
