@@ -3,6 +3,7 @@ package com.imooc.myo2o.dao;
 import com.imooc.myo2o.entity.Area;
 
 import java.util.List;
+import java.util.Map;
 
 public interface AreaDao {
 	/**
@@ -11,7 +12,7 @@ public interface AreaDao {
 	 * @param
 	 * @return
 	 */
-	List<Area> queryArea();
+	List<Map<String,Object>> queryArea();
 
 	/**
 	 * 

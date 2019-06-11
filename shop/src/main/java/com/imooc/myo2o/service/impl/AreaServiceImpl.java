@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class AreaServiceImpl implements AreaService {
@@ -28,9 +29,9 @@ public class AreaServiceImpl implements AreaService {
 
 
 	@Override
-	public List<Area> getAreaList() throws JsonParseException, JsonMappingException, IOException {
+	public List<Map<String,Object>> getAreaList() throws JsonParseException, JsonMappingException, IOException {
 
-		List<Area> areaList = areaDao.queryArea();
+		List<Map<String,Object>> areaList = areaDao.queryArea();
 
 		return areaList;
 	}
@@ -50,5 +51,11 @@ public class AreaServiceImpl implements AreaService {
 		} else {
 			return new AreaExecution(AreaStateEnum.EMPTY);
 		}
+	}
+
+	@Override
+	public int updateArea(Area area) {
+		int i = areaDao.updateArea(area);
+		return i;
 	}
 }

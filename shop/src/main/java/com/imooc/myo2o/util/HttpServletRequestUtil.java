@@ -18,4 +18,12 @@ public class HttpServletRequestUtil {
 
 
     }
+    public static Boolean getBoolean(HttpServletRequest request, String name) {
+
+        try {
+            return Boolean.valueOf(request.getParameter(name));
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

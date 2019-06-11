@@ -7,6 +7,7 @@ import com.imooc.myo2o.entity.Area;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 public interface AreaService {
 	/**
@@ -16,9 +17,13 @@ public interface AreaService {
 	 * @throws JsonMappingException
 	 * @throws IOException
 	 */
-	List<Area> getAreaList() throws JsonParseException, JsonMappingException,
+	List<Map<String,Object>> getAreaList() throws JsonParseException, JsonMappingException,
 			IOException;
 
 	AreaExecution addArea(Area area);
+
+	int updateArea(Area area);
+
+
 
 }
